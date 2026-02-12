@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+:root {
+  --color-tamii: #880e4f;
+  /* Deep Pink/Red */
+  --color-tamii-light: #c2185b;
+  --color-white: #ffffff;
+  --font-main: 'Great Vibes', cursive;
+  /* Exotic/Romantic font */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  overflow: hidden;
+  background-color: #ffe6e6;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.1);
+  /* soft shadow to ensure readability on soft bg */
+  transition: background-image 1s ease-in-out;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('./assets/soft_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+  animation: gentleDrift 20s infinite alternate ease-in-out;
+}
+
+@keyframes gentleDrift {
+  0% {
+    transform: scale(1);
+    background-position: 50% 50%;
+  }
+
+  100% {
+    transform: scale(1.1);
+    background-position: 52% 48%;
+  }
+}
+
+.content-box {
+  background: transparent;
+  /* Removed white bg */
+  backdrop-filter: none;
+  /* Removed blur */
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: none;
+  /* Removed shadow */
+  text-align: center;
+  max-width: 90%;
+  width: 600px;
+  /* Slightly wider for the big text */
+  z-index: 10;
+  border: none;
+  /* Removed border */
+}
+
+h1 {
+  color: var(--color-tamii);
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+  /* Larger for cursive font */
+  line-height: 1.2;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  /* Larger for cursive font */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  font-weight: bold;
+  font-family: var(--font-main);
+  /* Ensure buttons use the font too */
+}
+
+.btn-yes {
+  background-color: var(--color-tamii);
+  color: var(--color-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes:hover {
+  background-color: var(--color-tamii-light);
+  transform: scale(1.1);
+}
+
+.btn-no {
+  background-color: #d32f2f;
+  /* Make it red too but maybe different, or keep neutral? soft red */
+  color: var(--color-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Success State */
+.success-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Rising Animation for Success Text */
+@keyframes riseUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-text {
+  font-size: 4rem;
+  color: var(--color-tamii);
+  animation: riseUp 4s infinite ease-in-out;
+  /* "va du bas vers le haut de maniere repeter" */
+  /* This moves it up and fades out, then restarts */
+}
