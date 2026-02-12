@@ -7,9 +7,9 @@ function App() {
   const [noBtnStyle, setNoBtnStyle] = useState({});
 
   const handleNoHover = () => {
-    // Generate random offset between -150px and +150px
-    const x = (Math.random() - 0.5) * 300;
-    const y = (Math.random() - 0.5) * 300;
+    // Generate random offset between -350px and +350px
+    const x = (Math.random() - 0.5) * 700;
+    const y = (Math.random() - 0.5) * 700;
 
     setNoBtnStyle({
       transform: `translate(${x}px, ${y}px)`,
