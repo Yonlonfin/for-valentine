@@ -139,24 +139,16 @@ button {
   }
 }
 
-/* Rising Animation for Success Text */
-@keyframes riseUp {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
+/* Bouncing Animation for Success Text */
+@keyframes bounce {
 
-  20% {
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
+  0%,
   100% {
-    transform: translateY(-50px);
-    opacity: 0;
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
   }
 }
 
@@ -169,7 +161,5 @@ button {
 .success-text {
   font-size: 4rem;
   color: var(--color-tamii);
-  animation: riseUp 4s infinite ease-in-out;
-  /* "va du bas vers le haut de maniere repeter" */
-  /* This moves it up and fades out, then restarts */
+  animation: bounce 2s infinite ease-in-out;
 }
