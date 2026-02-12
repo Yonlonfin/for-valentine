@@ -27,7 +27,7 @@ function App() {
         {yesPressed ? (
           <div className="success-container">
             <img src={valentineGift} alt="Happy Valentine" className="success-image" />
-            <h1 className="success-text">A toi mon amour,Joyeux St Valentin Islamia</h1>
+            <h1 className="success-text">A toi mon amour ,aussi belle et épineuse telle une rose ,Joyeux St Valentin Islamia</h1>
           </div>
         ) : (
           <>
